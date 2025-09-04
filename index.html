@@ -3,18 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Style Css -->
+     <script src="css/style.css"></script>
+    <!-- Tailwind Css -->
+         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>To-Do List Fahmi</title>
 </head>
 <body>
 
     <!-- Header Section -->
-     <header></header>
+     <header>
+        <h1 class="text-3xl font-bold">My To-Do List</h1>
+     </header>
 
     <!-- Main Section -->
-      <main></main>
+      <main>
+    <!-- Input Section -->
+    <section id="todo-form" class="py-[16px]">
+        <form action="" >
+            <input type="text" id="todo-add" placeholder="Add a task...">
+            <input type="date" id="todo-date" >
+            <button type="submit">Add</button>
+        </form>
+    </section>
+    <!-- Button -->
+    <section>
+        <button type="button">Filter</button>
+        <button>Delete</button>
+    </section>
+      </main>
     
     <!-- Footer Section -->
-     <footer></footer>
+     <footer>
+        <p>© 2025 To-Do List Fahmi Ilyas</p>
+     </footer>
 
     <!-- Javascript External -->
      <script src="js/script.js"></script>
