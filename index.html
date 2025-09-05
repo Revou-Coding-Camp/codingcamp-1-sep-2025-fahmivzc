@@ -3,42 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Style Css -->
-     <script src="css/style.css"></script>
     <!-- Tailwind Css -->
          <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>To-Do List Fahmi</title>
 </head>
-<body>
-
+<body class="min-h-screen justify-items-center content-center bg-[url(img/download.jpg)] bg-cover ">
+    
+    <div class="w-full max-w-3xl bg-gray-700 rounded-lg shadow-2xl p-6 outline-3 outline-offset-2 outline-blue-600 outline-double ">
     <!-- Header Section -->
      <header>
-        <h1 class="text-3xl font-bold">My To-Do List</h1>
+        <h1 class="text-3xl font-bold text-center text-white ">My To-Do List</h1>
      </header>
 
     <!-- Main Section -->
       <main>
     <!-- Input Section -->
-    <section id="todo-form" class="py-[16px]">
-        <form action="" >
-            <input type="text" id="todo-add" placeholder="Add a task...">
-            <input type="date" id="todo-date" >
-            <button type="submit">Add</button>
+    <section id="todo-form" class="py-[16px] mb-4">
+        <form class="flex flex-wrap gap-2">
+            <input type="text" id="todo-add" placeholder="Add a task..." class="flex-1 min-w-[100px] px-3 py-2 rounded-md border border-gray-600 bg-gray-700 text-white" required>
+            <input type="date" id="todo-date"  class="flex-1 min-w-[100px] px-3 py-2 rounded-md border border-gray-600 text-white" required> 
+            <select id="filter-status" class="px-3 py-2 rounded-md min-w-[100px] border border-gray-600 bg-gray-700 text-white" required>
+                <option>--Choose Status---</option>
+                <option value="inprogress">Inprogress</option>
+                <option value="completed">Completed</option>
+                <option value="pending">Pending</option>
+            </select>
+            <button type="button" id="add-todo" class="bg-[#0f172a] ring-2 ring-blue-600 rounded-lg text-white px-7 py-2 mr-2 " onclick="validateInput();">Add</button>
+            <button type="reset" class="bg-[#0f172a] ring-2 ring-blue-600 rounded-lg text-white px-7 py-2 " onclick="resetForm();">Reset</button>
+            
         </form>
     </section>
-    <!-- Button -->
-    <section>
-        <button type="button">Filter</button>
-        <button>Delete</button>
+    <!-- END Input Section -->
+     <!-- Filter Section -->
+    <section class="mb-8 ">
+        <select id="todo-filter" class="px-3 py-2 rounded-md min-w-[100px] border border-gray-600 bg-gray-700 text-white">
+            <option>--Choose Filter---</option>
+            <option value="all">All Task</option>
+            <option value="inprogress">Inprogress</option>
+            <option value="completed">Completed</option>
+            <option value="pending">Pending</option>
+         </select>
+         <button type="button" class="bg-[#0f172a] ring-2 ring-blue-600 rounded-lg text-white px-6 py-2 mr-2"  onclick="filterTodo()">Filter</button>
+        <button type="button" class="bg-[#0f172a] ring-2 ring-blue-600 rounded-lg text-white px-6 py-2 " onclick="deleteAll();">Delete All</button>
     </section>
+    <!-- END Filter Section -->
+      <!-- Table section -->
+    <section class="mt-6">
+        <table class="table-auto border-collapse border border-gray-400 w-full text-left">
+             <thead class="bg-gray-400">
+                <tr>
+                    <th class="border border-gray-400 px-4 py-2"><center>Task</center></th>
+                    <th class="border border-gray-400 px-4 py-2"><center>Due Date</center></th>
+                    <th class="border border-gray-400 px-4 py-2"><center>Status</center></th>
+                    <th class="border border-gray-400 px-4 py-2"><center>Action</center></th>
+                </tr>
+             </thead>
+            <tbody id="todo-table">
+     
+             </tbody>
+        </table>
+    </section>
+    <!-- END Table Section -->
+
       </main>
+
     
     <!-- Footer Section -->
+     
+    <br>
      <footer>
-        <p>© 2025 To-Do List Fahmi Ilyas</p>
+        <p class="text-center text-white py-2">&copy; 2025 To-Do List Fahmi Ilyas</p>
      </footer>
-
-    <!-- Javascript External -->
+</div>
+    <!-- Javascript -->
      <script src="js/script.js"></script>
 </body>
 </html>
